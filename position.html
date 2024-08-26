@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Position and Flex Properties</title>
+    <style>
+        /* Position Properties */
+        
+        .static-position {
+            position: static;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .relative-position {
+            position: relative;
+            top: 20px;
+            left: 30px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .absolute-position {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .fixed-position {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .sticky-position {
+            position: sticky;
+            top: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        /* Flex Properties */
+        
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .flex-item {
+            flex-basis: 20%;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+        
+        .flex-item:nth-child(2) {
+            flex-grow: 2;
+        }
+        
+        .flex-item:nth-child(3) {
+            flex-shrink: 2;
+        }
+        
+        .flex-item:nth-child(4) {
+            order: 1;
+        }
+        
+        .flex-item:nth-child(5) {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Position Properties</h1>
+
+    <div class="static-position">Static Position</div>
+    <div class="relative-position">Relative Position</div>
+    <div class="absolute-position">Absolute Position</div>
+    <div class="fixed-position">Fixed Position</div>
+    <div class="sticky-position">Sticky Position</div>
+
+    <h1>Flex Properties</h1>
+
+    <div class="flex-container">
+        <div class="flex-item">Flex Item 1</div>
+        <div class="flex-item">Flex Item 2</div>
+        <div class="flex-item">Flex Item 3</div>
+        <div class="flex-item">Flex Item 4</div>
+        <div class="flex-item">Flex Item 5</div>
+    </div>
+</body>
+
+</html>
