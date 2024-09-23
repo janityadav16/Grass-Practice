@@ -34,5 +34,5 @@ const five = points.filter(point => point === 5);
 console.log(five);
 
 const call = (...args) => console.log(args);
-call('Hello', 'World');
+call.apply(null, ['Hello', 'World']);
 
