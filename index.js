@@ -32,3 +32,7 @@ const points = [40, 100, 1, 5, 25, 10];
 
 const five = points.filter(point => point === 5);
 console.log(five);
+
+const call = (...args) => console.log(args);
+call('Hello', 'World');
+
