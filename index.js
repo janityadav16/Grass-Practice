@@ -34,5 +34,6 @@ const five = points.filter(point => point === 5);
 console.log(five);
 
 const call = (...args) => console.log(args);
-call.apply(null, ['Hello', 'World']);
+const boundCall = call.bind(null, 'Hello', 'World');
+boundCall();
 
