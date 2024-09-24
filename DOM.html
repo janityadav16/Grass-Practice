@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Occupation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="name1"></td>
+                <td id="age1"></td>
+                <td id="occupation1"></td>
+            </tr>
+            <tr>
+                <td id="name2"></td>
+                <td id="age2"></td>
+                <td id="occupation2"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.getElementById('name1').innerHTML = 'John';
+        document.getElementById('age1').innerHTML = '30';
+        document.getElementById('occupation1').innerHTML = 'Developer';
+
+        document.getElementById('name2').innerHTML = 'Jane';
+        document.getElementById('age2').innerHTML = '25';
+        document.getElementById('occupation2').innerHTML = 'Designer';
+    </script>
+
+</body>
+
+</html>
