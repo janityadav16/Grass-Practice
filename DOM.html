@@ -24,27 +24,36 @@
         tr1.append(th1, th2, th3);
         thead.append(tr1);
 
-        const tr2 = document.createElement('tr');
-        const td1 = document.createElement('td');
-        td1.textContent = 'John';
-        const td2 = document.createElement('td');
-        td2.textContent = '30';
-        const td3 = document.createElement('td');
-        td3.textContent = 'Developer';
+        const people = [{
+            name: 'John',
+            age: 30,
+            occupation: 'Developer'
+        }, {
+            name: 'Jane',
+            age: 25,
+            occupation: 'Designer'
+        }, {
+            name: 'Bob',
+            age: 35,
+            occupation: 'Manager'
+        }, {
+            name: 'Alice',
+            age: 28,
+            occupation: 'Engineer'
+        }, ];
 
-        tr2.append(td1, td2, td3);
-        tbody.append(tr2);
+        people.forEach(person => {
+            const tr = document.createElement('tr');
+            const td1 = document.createElement('td');
+            td1.textContent = person.name;
+            const td2 = document.createElement('td');
+            td2.textContent = person.age;
+            const td3 = document.createElement('td');
+            td3.textContent = person.occupation;
 
-        const tr3 = document.createElement('tr');
-        const td4 = document.createElement('td');
-        td4.textContent = 'Jane';
-        const td5 = document.createElement('td');
-        td5.textContent = '25';
-        const td6 = document.createElement('td');
-        td6.textContent = 'Designer';
-
-        tr3.append(td4, td5, td6);
-        tbody.append(tr3);
+            tr.append(td1, td2, td3);
+            tbody.append(tr);
+        });
 
         table.append(thead, tbody);
         document.body.append(table);
