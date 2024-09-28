@@ -61,7 +61,7 @@
         }, ];
 
         people.forEach(person => {
-            const tr = tr1.cloneNode(true);
+            const tr = document.importNode(tr1, true);
             const td1 = tr.children[0];
             td1.textContent = person.name;
             const td2 = tr.children[1];
