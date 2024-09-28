@@ -61,15 +61,14 @@
         }, ];
 
         people.forEach(person => {
-            const tr = document.createElement('tr');
-            const td1 = document.createElement('td');
+            const tr = tr1.cloneNode(true);
+            const td1 = tr.children[0];
             td1.textContent = person.name;
-            const td2 = document.createElement('td');
+            const td2 = tr.children[1];
             td2.textContent = person.age;
-            const td3 = document.createElement('td');
+            const td3 = tr.children[2];
             td3.textContent = person.occupation;
 
-            tr.append(td1, td2, td3);
             tbody.append(tr);
         });
 
