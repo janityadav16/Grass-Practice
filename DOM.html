@@ -1,94 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+    const gradingSystem = {
+        'Math': [90, 80, 70, 60],
+        'Science': [85, 75, 65, 55],
+        'English': [95, 85, 75, 65]
+    };
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-
-<body>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        
-        th,
-        td {
-            border: 1px solid;
-            border-color: black;
-            border-radius: 50%;
-            padding: 8px;
-        }
-        
-        th {
-            text-align: left;
-        }
-    </style>
-
-    <script>
-        const table = document.createElement('table');
-        const thead = document.createElement('thead');
-        const tbody = document.createElement('tbody');
-
-        const tr1 = document.createElement('tr');
-        const th1 = document.createElement('th');
-        th1.textContent = 'Name';
-        const th2 = document.createElement('th');
-        th2.textContent = 'Age';
-        const th3 = document.createElement('th');
-        th3.textContent = 'Occupation';
-        const th4 = document.createElement('th');
-        th4.textContent = 'Grade';
-
-        tr1.append(th1, th2, th3, th4);
-        thead.append(tr1);
-
-        const students = [{
-            name: 'John',
-            age: 30,
-            occupation: 'Developer'
-        }, {
-            name: 'Jane',
-            age: 25,
-            occupation: 'Teacher'
-        }, {
-            name: 'Bob',
-            age: 40,
-            occupation: 'Engineer'
-        }];
-
-        function calculateGrade(student) {
-            if (student.age < 18) {
-                return 'A';
-            } else if (student.age < 25) {
-                return 'B';
-            } else if (student.age < 35) {
-                return 'C';
-            } else {
-                return 'D';
-            }
-        }
-
-        students.forEach(student => {
-            const tr = document.createElement('tr');
-            const td1 = document.createElement('td');
-            td1.textContent = student.name;
-            const td2 = document.createElement('td');
-            td2.textContent = student.age;
-            const td3 = document.createElement('td');
-            td3.textContent = student.occupation;
-            const td4 = document.createElement('td');
-            td4.textContent = calculateGrade(student);
-
-            tr.append(td1, td2, td3, td4);
-            tbody.append(tr);
-        });
-
-        table.append(thead, tbody);
-        document.body.append(table);
-    </script>
-
-</body>
-
-</html>
+    function calculateGrade(student) {
+        const subject = student.subject;
+        const marks = student.marks;
+        const grades = gradingSystem[subject];
+        if (marks >= grades[0]) return 'A';
+        else if (marks >= grades[1]) return 'B';
+        else if (marks >= grades[2]) return 'C';
+        else if (marks >= grades[3]) return 'D';
+        else return 'F';
+    }
+</script>
