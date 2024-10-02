@@ -19,11 +19,11 @@
             const subject = student.subject;
             const marks = student.marks;
             const grades = gradingSystem[subject];
-            if (marks >= grades[0]) return 'A';
-            else if (marks >= grades[1]) return 'B';
-            else if (marks >= grades[2]) return 'C';
-            else if (marks >= grades[3]) return 'D';
-            else return 'F';
+            if (marks >= grades[0]) return 'Pass';
+            else if (marks < grades[0] && marks >= grades[1]) return 'Pass';
+            else if (marks < grades[1] && marks >= grades[2]) return 'Pass';
+            else if (marks < grades[2] && marks >= grades[3]) return 'Pass';
+            else return 'Fail';
         }
     </script>
 </body>
