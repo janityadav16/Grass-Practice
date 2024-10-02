@@ -1,18 +1,31 @@
-<script>
-    const gradingSystem = {
-        'Math': [90, 80, 70, 60],
-        'Science': [85, 75, 65, 55],
-        'English': [95, 85, 75, 65]
-    };
+<!DOCTYPE html>
+<html lang="en">
 
-    function calculateGrade(student) {
-        const subject = student.subject;
-        const marks = student.marks;
-        const grades = gradingSystem[subject];
-        if (marks >= grades[0]) return 'A';
-        else if (marks >= grades[1]) return 'B';
-        else if (marks >= grades[2]) return 'C';
-        else if (marks >= grades[3]) return 'D';
-        else return 'F';
-    }
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const gradingSystem = {
+            'Math': [90, 80, 70, 60],
+            'Science': [85, 75, 65, 55],
+            'English': [95, 85, 75, 65]
+        };
+
+        function calculateGrade(student) {
+            const subject = student.subject;
+            const marks = student.marks;
+            const grades = gradingSystem[subject];
+            if (marks >= grades[0]) return 'A';
+            else if (marks >= grades[1]) return 'B';
+            else if (marks >= grades[2]) return 'C';
+            else if (marks >= grades[3]) return 'D';
+            else return 'F';
+        }
+    </script>
+</body>
+
+</html>
