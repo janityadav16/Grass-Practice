@@ -1,12 +1,14 @@
-function myPromise() {
+function createPromise(startTime, timeout) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            let success = true;
-            if (success) {
-                resolve("Promise resolved");
+        const timerId = setTimeout(() => {
+            const succeeded = Date.now() - startTime < timeout;
+            if (succeeded) {
+                resolve('Promise resolved');
             } else {
-                reject("Promise rejected");
+                reject('Promise rejected');
             }
-        }, 2000);
+        }, timeout);
+        return () => clearTimeout(timerId);
     });
 }
+
