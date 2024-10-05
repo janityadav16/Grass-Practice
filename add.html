@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Counter</title>
     <style>
         body {
             display: flex;
@@ -15,13 +15,19 @@
             background-color: #333;
         }
         
-        #count {
+        .counter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .counter__output {
             font-size: 4rem;
             color: white;
             margin: 0 1rem;
         }
         
-        button {
+        .counter__button {
             background-color: #4CAF50;
             color: white;
             padding: 1rem 2rem;
@@ -30,25 +36,30 @@
             cursor: pointer;
         }
         
-        button:hover {
+        .counter__button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
 
 <body>
-    <p id="count">0</p>
-    <button id="plus">+</button>
-    <button id="minus">-</button>
+    <div class="counter">
+        <button class="counter__button" id="minus">-</button>
+        <p class="counter__output" id="count">0</p>
+        <button class="counter__button" id="plus">+</button>
+    </div>
     <script>
         let count = 0;
+        const displayCount = () => {
+            document.getElementById('count').innerHTML = count;
+        };
         document.getElementById('plus').addEventListener('click', () => {
             count++;
-            document.getElementById('count').innerHTML = count;
+            displayCount();
         });
         document.getElementById('minus').addEventListener('click', () => {
             count--;
-            document.getElementById('count').innerHTML = count;
+            displayCount();
         });
     </script>
 </body>
