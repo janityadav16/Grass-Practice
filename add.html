@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counter</title>
+    <title>Guess My Number</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <style>
         body {
@@ -16,9 +16,9 @@
             background-color: #333;
         }
         
-        .counter {
+        .game {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             background-color: #fff;
             border-radius: 10px;
@@ -26,7 +26,19 @@
             padding: 1rem;
         }
         
-        .counter__button {
+        .game__title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .game__counter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .game__button {
             background-color: #4CAF50;
             color: white;
             padding: 1rem 2rem;
@@ -38,15 +50,15 @@
             transition: background-color 0.2s ease-in-out;
         }
         
-        .counter__button:hover {
+        .game__button:hover {
             background-color: #45a049;
         }
         
-        .counter__button:active {
+        .game__button:active {
             background-color: #3e8e41;
         }
         
-        .counter__output {
+        .game__output {
             font-size: 4rem;
             color: #333;
             margin: 0 1rem;
@@ -55,10 +67,13 @@
 </head>
 
 <body>
-    <div class="counter">
-        <button class="counter__button" id="minus"><i class="fas fa-minus"></i></button>
-        <p class="counter__output" id="count">0</p>
-        <button class="counter__button" id="plus"><i class="fas fa-plus"></i></button>
+    <div class="game">
+        <h1 class="game__title">Guess My Number</h1>
+        <div class="game__counter">
+            <button class="game__button" id="minus"><i class="fas fa-minus"></i></button>
+            <p class="game__output" id="count">0</p>
+            <button class="game__button" id="plus"><i class="fas fa-plus"></i></button>
+        </div>
     </div>
     <script>
         let count = 0;
