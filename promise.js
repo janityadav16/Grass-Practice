@@ -12,10 +12,20 @@ let count = 0;
 document.getElementById('plus').addEventListener('click', () => {
     count++;
     document.getElementById('count').innerHTML = count;
+    createPromise(Date.now(), 2000)().then((res) => {
+        console.log(res);
+    }).catch((err) => {
+        console.log(err);
+    });
 });
 
 document.getElementById('minus').addEventListener('click', () => {
     count--;
     document.getElementById('count').innerHTML = count;
+    createPromise(Date.now(), 2000)().then((res) => {
+        console.log(res);
+    }).catch((err) => {
+        console.log(err);
+    });
 });
 
