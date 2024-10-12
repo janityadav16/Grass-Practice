@@ -28,4 +28,6 @@ document.getElementById('minus').addEventListener('click', () => {
         console.log(err);
     });
 });
-
+if (typeof document === 'undefined') {
+    console.log('document is not defined');
+} else { }
