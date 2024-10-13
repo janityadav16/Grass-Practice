@@ -1,6 +1,6 @@
-const createPromise = (startTime, timeout) => new Promise((resolve, reject) => {
+const createPromise = (count, timeout) => new Promise((resolve, reject) => {
     const timerId = setTimeout(() => {
-        const succeeded = Date.now() - startTime < timeout;
+        const succeeded = count < timeout;
         succeeded ? resolve('Promise resolved') : reject('Promise rejected');
     }, timeout);
 
@@ -12,7 +12,7 @@ let count = 0;
 document.getElementById('plus').addEventListener('click', () => {
     count++;
     document.getElementById('count').innerHTML = count;
-    createPromise(Date.now(), 2000)().then((res) => {
+    createPromise(count, 2000)().then((res) => {
         console.log(res);
     }).catch((err) => {
         console.log(err);
@@ -22,12 +22,10 @@ document.getElementById('plus').addEventListener('click', () => {
 document.getElementById('minus').addEventListener('click', () => {
     count--;
     document.getElementById('count').innerHTML = count;
-    createPromise(Date.now(), 2000)().then((res) => {
+    createPromise(count, 2000)().then((res) => {
         console.log(res);
     }).catch((err) => {
         console.log(err);
     });
 });
-if (typeof document === 'undefined') {
-    console.log('document is not defined');
-} else { }
+
