@@ -4,7 +4,7 @@ let marks = [];
 let sum = 0;
 
 for (let i = 0; i < 5; i++) {
-    let mark = Number(prompt(`Enter mark for subject ${i + 1}: `));
+    let mark = Number(prompt(`Enter mark for subject ${i + 1} (Math, Science, English, History, Geography): `));
     marks.push(mark);
     sum += mark;
 }
@@ -24,3 +24,4 @@ if (average >= 90) {
 } else {
     console.log('Grade: F');
 }
+
