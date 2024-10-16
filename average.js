@@ -13,15 +13,12 @@ let average = sum / marks.length;
 
 console.log(`The average of marks is ${average}`);
 
-if (average >= 90) {
-    console.log('Grade: A');
-} else if (average >= 80) {
-    console.log('Grade: B');
-} else if (average >= 70) {
-    console.log('Grade: C');
-} else if (average >= 60) {
-    console.log('Grade: D');
-} else {
-    console.log('Grade: F');
+let grades = ['F', 'D', 'C', 'B', 'A'];
+let gradeIndex = Math.floor(average / 10) - 5;
+
+if (gradeIndex < 0) {
+    gradeIndex = 0;
 }
+
+console.log(`Grade: ${grades[gradeIndex]}`);
 
