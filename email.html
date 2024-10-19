@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Email</title>
+</head>
+
+<body>
+    <h1>Enter Your Email</h1>
+    <form>
+        <input type="email" id="email" name="email" required>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.querySelector('#email').value;
+            Email.send({
+                Host: "smtp.yourisp.com",
+                Username: "username",
+                Password: "password",
+                To: email,
+                From: "youremail@yourisp.com",
+                Subject: "Thank you for contacting us",
+                Body: "Thank you for contacting us. We will respond to your query as soon as possible."
+            }).then(
+                message => alert(
+                    "Thank you for contacting us. We will respond to your query as soon as possible.")
+            );
+        });
+    </script>
+</body>
+
+</html>
